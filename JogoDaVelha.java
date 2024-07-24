@@ -17,7 +17,7 @@ public class JogoDaVelha {
 	        
 	        System.out.println("Bem-vindo ao Jogo da Velha!\n");
 	        while (jogoAtivo) {
-	            // Imprime o tabuleiro atualizado
+	           
 	            imprimirTabuleiro(tabuleiro);
 	            
 	            // Obtém a jogada do jogador atual
@@ -28,10 +28,10 @@ public class JogoDaVelha {
 	            
 	            // Verifica se a jogada é válida
 	            if (validarJogada(tabuleiro, linha, coluna)) {
-	                // Realiza a jogada
+	                
 	                realizarJogada(tabuleiro, linha, coluna, jogadorAtual);
 	                
-	                // Verifica se há um vencedor
+	                
 	                String resultado = verificarResultado(tabuleiro);
 	                if (!resultado.equals(" ")) {
 	                    jogoAtivo = false;
@@ -91,11 +91,11 @@ public class JogoDaVelha {
 	    public static String verificarResultado(String[][] tabuleiro) {
 	        // Verifica linhas e colunas
 	        for (int i = 0; i < 3; i++) {
-	            // Linhas
+	          
 	            if (!tabuleiro[i][0].equals(" ") && tabuleiro[i][0].equals(tabuleiro[i][1]) && tabuleiro[i][0].equals(tabuleiro[i][2])) {
 	                return tabuleiro[i][0];
 	            }
-	            // Colunas
+	           
 	            if (!tabuleiro[0][i].equals(" ") && tabuleiro[0][i].equals(tabuleiro[1][i]) && tabuleiro[0][i].equals(tabuleiro[2][i])) {
 	                return tabuleiro[0][i];
 	            }

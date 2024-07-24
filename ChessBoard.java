@@ -21,7 +21,7 @@ public class ChessBoard {
         int jogadorAtual = 1; // Começa com as peças brancas
 
         while (jogoAtivo) {
-            // Imprime o tabuleiro atualizado
+            
             imprimirTabuleiro(board);
 
             // Determina a cor do jogador atual
@@ -65,20 +65,11 @@ public class ChessBoard {
             board[linhaDestino][colunaDestino] = board[linhaOrigem][colunaOrigem];
             board[linhaOrigem][colunaOrigem] = " ";
 
-            // Troca de jogador
+            
             jogadorAtual = 2; // Troca para as peças pretas
-
-            // Verifica condições de fim de jogo (exemplo: xeque-mate, empate, etc.)
-            // Implemente lógica aqui se necessário
-
-            // Exemplo: Condição de fim de jogo após um número fixo de movimentos
-            // if (numeroDeMovimentos >= 50) {
-            //    jogoAtivo = false;
-            // }
-
         }
 
-        // Fecha o Scanner
+     
         scanner.close();
     }
 
@@ -97,19 +88,19 @@ public class ChessBoard {
 
     // Método para validar movimento de um peão branco
     public static boolean movimentoValidoParaPeao(String[][] board, int linhaOrigem, int colunaOrigem, int linhaDestino, int colunaDestino) {
-        // Movimento de avanço de uma casa para peão branco
+ 
         if (linhaDestino == linhaOrigem - 1 && colunaDestino == colunaOrigem && board[linhaDestino][colunaDestino].equals(" ")) {
             return true;
         }
-        // Primeiro movimento de avanço de duas casas para peão branco
+      
         else if (linhaOrigem == 6 && linhaDestino == 4 && colunaDestino == colunaOrigem && board[4][colunaOrigem].equals(" ") && board[5][colunaOrigem].equals(" ")) {
             return true;
         }
-        // Captura diagonal para peão branco
+
         else if (linhaDestino == linhaOrigem - 1 && Math.abs(colunaDestino - colunaOrigem) == 1 && !board[linhaDestino][colunaDestino].equals(" ") && Character.isLowerCase(board[linhaDestino][colunaDestino].charAt(0))) {
             return true;
         }
-        // Outros casos são movimentos inválidos para o peão branco
+     
         return false;
     }
 }
